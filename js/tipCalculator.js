@@ -10,7 +10,7 @@ button.addEventListener("click", function(){
     // console.log("click");
     console.log(cost.value * 0.15);
     let tip = (cost.value*0.15).toFixed(2);
-    let temp = '<h1>You should tip $ '+ tip + ' on $'+cost.value +'</h1>';
+    let temp = `<h1>You should tip $${tip} on $${cost.value} bill.</h1>`;
 
     output.innerHTML=temp;
 
