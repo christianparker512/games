@@ -6,13 +6,40 @@
 </head>
 <body>
 
-    <div class="message"></div>
+    <div class="message">Select either Heads or Tails</div>
     <button type="button">Heads</button>
     <button type="button">Tails</button>
     <script>
+    const coinArray = ["Heads","Tails"]
+    let score = [0,0]
     const message = document.querySelector(".message");
     const buttons = document.querySelectorAll("button");
     console.log(buttons);
+
+    for (let i=0; i <buttons.length; i++){
+        console.log(buttons[i]);
+        buttons[i].addEventListener("click", tossCoin);
+    }
+    function tossCoin(e){
+    //     console.log("player:" + e.target.innerText);
+        let playerGuess = e.target.innerText;
+        let computerToss = Math.floor(Math.random()*2);
+        // console.log("computer:" +coinArray[computerToss]);
+        let computerGuess = coinArray[computerToss];
+        message.innerHTML = "The Computer Selected " + computerGuess + "<br><br>";
+    let output;
+    if(playerGuess === computerGuess){
+        output = "Player Wins!     "
+        //win
+        score[0]++
+    }else{
+        //loss
+        output = "The Computer Wins     ";
+        score[1]++;
+    }
+    message.innerHTML = output + "<br>Player " + score[0] + "Computer " + score[1];
+    }
+
 
     </script>
 
