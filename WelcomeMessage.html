@@ -7,7 +7,8 @@
 </head>
 <body>
     <div  class="output"></div>
-    <input type="text" value="Type your name">
+<!--    <input type="text" value="Type your name">-->
+    <input placeholder="text" value="Type your name">
     <button type="button">Submit!</button>
     <script>
         const output = document.querySelector(".output")
@@ -19,6 +20,7 @@
         function showMessage(){
             // console.log("hello")
             output.innerHTML="<h1>Hello. Welcome, " +myName.value+"</h1>";
+           alert("Hello. Welcome, " +myName.value);
         }
     </script>
 </body>
