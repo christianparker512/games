@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Message</title>
+    <script src="js/welcomeMessage.js"></script>
+</head>
+<body>
+    <div  class="output"></div>
+    <input type="text" value="Type your name">
+    <button type="button">Submit!</button>
+    <script>
+        const output = document.querySelector(".output")
+        const button= document.querySelector("button");
+        const myName = document.querySelector("input");
+
+        console.log(button)
+        button.addEventListener("click", showMessage)
+        function showMessage(){
+            // console.log("hello")
+            output.innerHTML="<h1>Hello. Welcome, " +myName.value+"</h1>";
+        }
+    </script>
+</body>
+</html>
