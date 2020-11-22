@@ -3,16 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Getting The Date in JavaScript</title>
+    <style>
+        .output{
+            width: 200px;
+            height: 200px;
+            color: white;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div class = "output"></div>
 <button type="button">Click Here to get today's date</button>
 <script>
     const button = document.querySelector("button");
+    const output = document.querySelector(".output");
     button.addEventListener("click",showOutput);
 
     function showOutput(){
             const date = new Date();
+            let current = date.getHours();
+            let message;
+            current = 16;
+            if (current>17){
+                message="Good evening!"
+                output.style.backgroundColor = "black";
+             } else if (current >12){
+                message = "Good afternoon!"
+                output.style.backgroundColor = "blue";
+            } else if  (current >0){
+                message = "Good Morning. It's going to be a great day!"
+                output.style.backgroundColor = "orange";
+            } else {
+                message = "Something is wrong. You should go back to bed."
+                output.style.backgroundColor = "red";
+
+        }
+
+            output.innerHTML = "<h1>"+message+"</h1>";
             console.log(date.getDate());
             console.log("it works");
     }
